@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap | Andika Dwiyanto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous" />
+    <!-- Chainlink Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        * {
+            color: #404040;
+            font-family: "Poppins", sans-serif;
+        }
+
+        nav {
+            color: #374151;
+            font-weight: 600;
+        }
+
+        .navBtn {
+            background-color: #187cff;
+            font-weight: bold;
+            border-radius: 100px;
+            padding: 10px 15px;
+        }
+
+        .dropdown-menu {
+            background-color: #374151;
+        }
+
+        .dropdown-item {
+            color: #f6fcff;
+        }
+
+        .dropdown-item:hover {
+            background-color: rgba(246, 252, 255, 0.825694);
+        }
+
+        .backgroundImage {
+            background: linear-gradient(96.17deg,
+                    #f6fcff 10.09%,
+                    rgba(246, 252, 255, 0.825694) 21.39%,
+                    rgba(246, 252, 255, 0.537489) 47.55%,
+                    rgba(246, 252, 255, 0) 66.91%);
+            display: block;
+            position: absolute;
+            z-index: 9;
+        }
+
+        .numberList {
+            position: absolute;
+            border-radius: 100px;
+            padding: 10px 12px;
+        }
+
+        .numberTitle {
+            width: 100%;
+            position: relative;
+            margin-left: 50px;
+            padding: 2px;
+            color: #404040;
+            font-weight: 600;
+        }
+
+        .numberDesc {
+            position: relative;
+            margin-left: 52px;
+            margin-top: -9px;
+            color: #4e5053;
+        }
+
+        .box {
+            display: block;
+            z-index: 1;
+            padding: 10px 8px 0px 8px;
+            margin-top: -20px;
+            margin-left: auto;
+            margin-right: auto;
+            justify-content: center;
+            text-align: left;
+            width: 80%;
+            border: 0.666468px solid #ffffff;
+            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(9.52097px);
+        }
+
+        .strip {
+            position: absolute;
+            flex-direction: column;
+            border: 1px dashed #187cff;
+            display: inline;
+            width: 0px;
+            height: 55px;
+            margin-left: 15px;
+            margin-right: 15px;
+            margin-top: 38px;
+        }
+
+        .strip2 {
+            position: absolute;
+            flex-direction: column;
+            border: 1px dashed #187cff;
+            display: inline;
+            width: 0px;
+            height: 55px;
+            margin-left: 15px;
+            margin-right: 15px;
+            margin-top: 38px;
+        }
+
+        .bannerBtn {
+            padding: 8px 18px 8px 18px;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .freeBadge {
+            position: absolute;
+            margin-left: -40px;
+            margin-top: -12px;
+            border-radius: 100px;
+        }
+
+        .leftGrid {
+            margin-left: 90px;
+            width: 40%;
+        }
+
+        /* Medium devices (tablets, 768px and up) */
+        @media (max-width: 1040px) {
+            .navBtn {
+                display: inline;
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            .bannerBtn {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 20px;
+                margin-top: -10px;
+                width: 85%;
+            }
+
+            .freeBadge {
+                display: none;
+            }
+
+            .subText {
+                display: block;
+                text-align: center;
+                margin-top: -20px;
+                margin-bottom: 50px;
+            }
+
+            .leftGrid {
+                margin-left: auto;
+                margin-right: auto;
+            width: 100%;
+        }
+            .rightGrid {
+                transform: scale(1.1);
+            }
+            
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Navbar START -->
+    <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="#">
+                <img class="img mx-5 me-auto" src="assets/eduwork.png" alt="Bootstrap" width="" height="32" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Tombol Navbar -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto me-0 mb-2 mb-lg-0 p-2">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Kelas</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Private Mentoring</a></li>
+                            <li><a class="dropdown-item" href="#">Bootcamp</a></li>
+                            <li><a class="dropdown-item" href="#">Webinar</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Hubungi Admin</a>
+                    </li>
+                </ul>
+                <!-- End Tombol Navbar -->
+                <div class="d-inline mx-auto">
+                    <button class="navBtn btn btn-primary" type="submit">Login</button>
+                    <button class="navBtn btn btn-primary" type="submit">Register</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- .END Navbar -->
+
+    <!-- Hero START -->
+    <div class="container-fluid">
+        <div class="backgroundImage container-fluid">
+            <div class="row d-flex p-5">
+                <!-- Left Grid -->
+                <div class="leftGrid " style="z-index: 30; display: flex; flex-direction: column;">
+                    <!-- Left Grid Content -->
+                    <h1 style="font-size: 36px; font-weight: bolder" class="mt-2">
+                        Pelatihan & <br />
+                        Penyaluran Kerja
+                    </h1>
+                    <div class="col">
+                        <div class="d-block mt-4">
+                            <span class="numberList badge bg-primary">1</span>
+                            <div class="strip"></div>
+                            <h5 class="numberTitle">Daftar Gratis</h5>
+                            <p class="numberDesc">
+                                Join komunitas belajar, dapatkan akses kelas & materi gratis
+                            </p>
+                        </div>
+                        <div class="d-block mt-4">
+                            <span class="numberList badge bg-primary">2</span>
+                            <div class="strip2"></div>
+                            <h5 class="numberTitle">Belajar Intensif</h5>
+                            <p class="numberDesc">
+                                Belajar didampingi virtual assistant & mentor expert via gruo
+                                & 1-on-1 zoom mentoring
+                            </p>
+                        </div>
+                        <div class="d-block mt-4">
+                            <span class="numberList badge bg-primary">3</span>
+                            <h5 class="numberTitle">Penyaluran Kerja Dijamin</h5>
+                            <p class="numberDesc">
+                                Dapatkan pekerjaan dengan gahi s.d 10jt lebih
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col mt-4">
+                        <!-- BUTTON Left Grid -->
+                        <button class="bannerBtn btn btn-primary">Daftar Sekarang!</button>
+                        <span class="freeBadge badge bg-danger">Free</span>
+                        <!-- Menambahkan jarak antar object -->
+                        &nbsp;&nbsp;&nbsp;
+                        <button class="bannerBtn btn btn-warning">Konsultasi Dulu</button>
+                        <!-- Membuat baris baru -->
+                        <br><br>
+                        <p class="subText text">
+                            <strong>54,429</strong> Students &
+                            <strong>131</strong> Mentors has joined!
+                        </p>
+                    </div>
+                </div> <!-- .. End Left Grid-->
+                <!-- Right Grid -->
+                <div class="rightGrid col">
+                    <!-- Right Grid Content -->
+                    <img style="z-index: 1; position: relative; display: block; width: auto; text-align: center; justify-content: center; margin-left: auto; margin-right: auto; margin-top: 10px;"
+                        src="assets/banner.png" alt="gambar-orang" />
+                    <div class="box card bg-light text-dark">
+                        <!-- Box teks -->
+                        <p class="fw-bold">
+                            "Sebelumnya saya tidak punya background IT karena jurusan Kimia,
+                            setelah saya belajar coding di Eduwork, Saya berhasil diterima
+                            kerja di Tokopedia sebagai Programer."
+                        </p>
+                    </div>
+                </div> <!-- ..End Right Grid -->
+            </div>
+        </div>
+    </div>
+    <!-- .END Hero -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
