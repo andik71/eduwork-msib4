@@ -1,0 +1,157 @@
+* {
+    color: #404040;
+    font-family: "Poppins", sans-serif;
+}
+
+nav {
+    color: #374151;
+    font-weight: 600;
+}
+
+.navBtn {
+    background-color: #187cff;
+    font-weight: bold;
+    border-radius: 100px;
+    padding: 10px 15px;
+}
+
+.dropdown-menu {
+    background-color: #374151;
+}
+
+.dropdown-item {
+    color: #f6fcff;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(246, 252, 255, 0.825694);
+}
+
+.backgroundImage {
+    background: linear-gradient(96.17deg,
+            #f6fcff 10.09%,
+            rgba(246, 252, 255, 0.825694) 21.39%,
+            rgba(246, 252, 255, 0.537489) 47.55%,
+            rgba(246, 252, 255, 0) 66.91%);
+    display: block;
+    position: absolute;
+    z-index: 9;
+}
+
+.numberList {
+    position: absolute;
+    border-radius: 100px;
+    padding: 10px 12px;
+}
+
+.numberTitle {
+    width: 100%;
+    position: relative;
+    margin-left: 50px;
+    padding: 2px;
+    color: #404040;
+    font-weight: 600;
+}
+
+.numberDesc {
+    position: relative;
+    margin-left: 52px;
+    margin-top: -9px;
+    color: #4e5053;
+}
+
+.box {
+    display: block;
+    z-index: 1;
+    padding: 10px 8px 0px 8px;
+    margin-top: -20px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    text-align: left;
+    width: 80%;
+    border: 0.666468px solid #ffffff;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(9.52097px);
+}
+
+.strip {
+    position: absolute;
+    flex-direction: column;
+    border: 1px dashed #187cff;
+    display: inline;
+    width: 0px;
+    height: 55px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 38px;
+}
+
+.strip2 {
+    position: absolute;
+    flex-direction: column;
+    border: 1px dashed #187cff;
+    display: inline;
+    width: 0px;
+    height: 55px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 38px;
+}
+
+.bannerBtn {
+    padding: 8px 18px 8px 18px;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.freeBadge {
+    position: absolute;
+    margin-left: -40px;
+    margin-top: -12px;
+    border-radius: 100px;
+}
+
+.leftGrid {
+    margin-left: 90px;
+    width: 40%;
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 1040px) {
+    .navBtn {
+        display: inline;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .bannerBtn {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px;
+        margin-top: -10px;
+        width: 85%;
+    }
+
+    .freeBadge {
+        display: none;
+    }
+
+    .subText {
+        display: block;
+        text-align: center;
+        margin-top: -20px;
+        margin-bottom: 50px;
+    }
+
+    .leftGrid {
+        margin-left: auto;
+        margin-right: auto;
+    width: 100%;
+}
+    .rightGrid {
+        transform: scale(1.1);
+    }
+    
+}
