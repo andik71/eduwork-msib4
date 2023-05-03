@@ -11,16 +11,16 @@ $data = json_decode($arr, true);
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Andika Dwiyanto | PHP Switch-Case</title>
+    <title>PHP Part 4</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 </head>
 
-<body class="bg-dark">
+<body>
 
     <!-- Banner Start -->
     <div class="container-fluid mt-5 mb-3">
         <div class="container">
-            <h5 class="text-light fw-bold">Tugas Switch-Case PHP | Eduwork MSIB4 2023</h5>
+            <h5 class="text-dark fw-bold">PHP Part 4 | Eduwork MSIB4 2023</h5>
         </div>
     </div>
     <!-- Banner End. -->
@@ -30,8 +30,8 @@ $data = json_decode($arr, true);
         <div class="container">
 
         <!-- Tabel Nilai -->
-        <table class="table table-bordered text-light">
-            <thead class="text-center">
+        <table class="table table-bordered text-dark bg-light">
+            <thead class="text text-center text-light bg-dark">
                 <tr>
                     <th>#</th>
                     <th>Nama</th>
@@ -50,6 +50,9 @@ $data = json_decode($arr, true);
                 // Variable $no berperan sebagai penomoran
                 $no = 1;
                 foreach ($data as $row) { // Perulangan foreach
+
+                    // ternary
+                    $warna = ($row['umur'] % 2 == 0) ? 'bg-warning' : 'bg-info' ;
                     // Operasi Switch-case membuat rentang nilai
                     switch ($row['nilai']) {
                         case $row['nilai'] >= 90 && $row['nilai'] <= 100:
@@ -98,7 +101,7 @@ $data = json_decode($arr, true);
                             break;
                     } ?>
 
-                <tr>
+                <tr class="<?= $warna ?>">
                     <td><?= $no++ ?></td>
                     <td><?= $row['nama'] ?></td>
                     <td><?= $row['tanggal_lahir'] ?></td>
@@ -129,7 +132,7 @@ $data = json_decode($arr, true);
     <!-- Footer Start -->
     <div class="container-fluid">
         <div class="container mt-2 text-center">
-            <p class="text-light small">2023 &copy; Andika Dwiyanto. All rights reserved</p>
+            <p class="text-dark small">2023 &copy; Andika Dwiyanto. All rights reserved</p>
         </div>
     </div>
     <!-- End. Footer -->
