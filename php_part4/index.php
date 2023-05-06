@@ -50,6 +50,10 @@ $data = json_decode($arr, true);
                 // Variable $no berperan sebagai penomoran
                 $no = 1;
                 foreach ($data as $row) { // Perulangan foreach
+                    // Perhitungan Umur
+                    $tgl_lahir = new datetime($row['tanggal_lahir']);
+                    $currentDate = new datetime();
+                    $umur = $currentDate->diff($tgl_lahir);
 
                     // ternary
                     $warna = ($row['umur'] % 2 == 0) ? 'bg-warning' : 'bg-info' ;
@@ -105,7 +109,7 @@ $data = json_decode($arr, true);
                     <td><?= $no++ ?></td>
                     <td><?= $row['nama'] ?></td>
                     <td><?= $row['tanggal_lahir'] ?></td>
-                    <td><?= $row['umur'] ?> Tahun</td>
+                    <td><?= $umur->y . ' Tahun' ?> Tahun</td>
                     <td><?= $row['alamat'] ?></td>
                     <td><?= $row['kelas'] ?></td>
                     <td class="text-center"><?= number_format($row['nilai']) ?></td>
