@@ -1,7 +1,6 @@
 [
     {
         "nama": "Pelita",
-        "umur": 24,
         "kelas": "Laravel",
         "alamat": "Bandung",
         "tanggal_lahir": "1997-12-27",
@@ -9,7 +8,6 @@
     },
     {
         "nama": "Najmina",
-        "umur": 23,
         "kelas": "Vue JS",
         "alamat": "Jakarta",
         "tanggal_lahir": "1998-10-07",
@@ -17,7 +15,6 @@
     },
     {
         "nama": "Anita",
-        "umur": 22,
         "kelas": "Design",
         "alamat": "Semarang",
         "tanggal_lahir": "1999-08-20",
@@ -25,7 +22,6 @@
     },
     {
         "nama": "Bayu",
-        "umur": 31,
         "kelas": "Digital Marketing",
         "alamat": "Bandung",
         "tanggal_lahir": "1990-01-01",
@@ -33,7 +29,6 @@
     },
     {
         "nama": "Nasa",
-        "umur": 25,
         "kelas": "UI/UX Designer",
         "alamat": "Bandung",
         "tanggal_lahir": "1995-04-10",

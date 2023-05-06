@@ -1,4 +1,4 @@
-<?php 
+<?php
 $file = "data.json"; // Path file
 $arr = file_get_contents($file);
 $data = json_decode($arr, true);
@@ -29,105 +29,109 @@ $data = json_decode($arr, true);
     <div class="container-fluid">
         <div class="container">
 
-        <!-- Tabel Nilai -->
-        <table class="table table-bordered text-dark bg-light">
-            <thead class="text text-center text-light bg-dark">
-                <tr>
-                    <th>#</th>
-                    <th>Nama</th>
-                    <th>Tanggal Lahir</th>
-                    <th>Umur</th>
-                    <th>Alamat</th>
-                    <th>Kelas</th>
-                    <th>Nilai</th>
-                    <th>Rentang Nilai</th>
-                    <th>Keterangan</th>
-                </tr>
-            </thead>
-            <tbody>
+            <!-- Tabel Nilai -->
+            <table class="table table-bordered text-dark bg-light">
+                <thead class="text text-center text-light bg-dark">
+                    <tr>
+                        <th>#</th>
+                        <th>Nama</th>
+                        <th>Tanggal Lahir</th>
+                        <th>Umur</th>
+                        <th>Alamat</th>
+                        <th>Kelas</th>
+                        <th>Nilai</th>
+                        <th>Rentang Nilai</th>
+                        <th>Keterangan</th>
+                    </tr>
+                </thead>
+                <tbody>
 
-            <?php
-                // Variable $no berperan sebagai penomoran
-                $no = 1;
-                foreach ($data as $row) { // Perulangan foreach
-                    // Perhitungan Umur
-                    $tgl_lahir = new datetime($row['tanggal_lahir']);
-                    $currentDate = new datetime();
-                    $umur = $currentDate->diff($tgl_lahir);
+                    <?php
+                    // Variable $no berperan sebagai penomoran
+                    $no = 1;
 
-                    // ternary
-                    $warna = ($row['umur'] % 2 == 0) ? 'bg-warning' : 'bg-info' ;
-                    // Operasi Switch-case membuat rentang nilai
-                    switch ($row['nilai']) {
-                        case $row['nilai'] >= 90 && $row['nilai'] <= 100:
-                            $grade = 'A';
-                            $ket = 'Sangat Baik';
-                            break;
-                        case $row['nilai'] >= 85 && $row['nilai'] <= 89.9:
-                            $grade = 'A-';
-                            $ket = 'Sangat Baik';
-                            break;
-                        case $row['nilai'] >= 80 && $row['nilai'] <= 84.9:
-                            $grade = 'B+';
-                            $ket = 'Sangat Baik';
-                            break;
-                        case $row['nilai'] >= 75 && $row['nilai'] <= 79.9:
-                            $grade = 'B';
-                            $ket = 'Baik';
-                            break;
-                        case $row['nilai'] >= 70 && $row['nilai'] <= 74.9:
-                            $grade = 'B-';
-                            $ket = 'Baik';
-                            break;
-                        case $row['nilai'] >= 65 && $row['nilai'] <= 69.9:
-                            $grade = 'C+';
-                            $ket = 'Cukup';
-                            break;
-                        case $row['nilai'] >= 60 && $row['nilai'] <= 64.9:
-                            $grade = 'C';
-                            $ket = 'Cukup';
-                            break;
-                        case $row['nilai'] >= 55 && $row['nilai'] <= 59.9:
-                            $grade = 'C-';
-                            $ket = 'Kurang';
-                            break;
-                        case $row['nilai'] >= 50 && $row['nilai'] <= 54.9:
-                            $grade = 'D';
-                            $ket = 'Tidak Lulus';
-                            break;
-                        case $row['nilai'] >= 0 && $row['nilai'] <= 49.9:
-                            $grade = 'E';
-                            $ket = 'Tidak Lulus';
-                            break;
-                        default:
-                            $grade = 'NaN';
-                            $ket = 'Null';
-                            break;
-                    } ?>
+                    foreach ($data as $row) { // Perulangan foreach
+                        // perhitungan umur
+                        $tgl_lahir = new DateTime($row['tanggal_lahir']);
+                        $currentDate = new DateTime();
+                        $age = $currentDate->diff($tgl_lahir);
 
-                <tr class="<?= $warna ?>">
-                    <td><?= $no++ ?></td>
-                    <td><?= $row['nama'] ?></td>
-                    <td><?= $row['tanggal_lahir'] ?></td>
-                    <td><?= $umur->y . ' Tahun' ?> Tahun</td>
-                    <td><?= $row['alamat'] ?></td>
-                    <td><?= $row['kelas'] ?></td>
-                    <td class="text-center"><?= number_format($row['nilai']) ?></td>
-                    <td class="text-center"><?= $grade ?></td>
-                    <td><?= $ket ?></td>
-                </tr>
+                        // ternary
+                        $warna = ($age->y % 2 == 0) ? 'bg-warning' : 'bg-info' ;
 
-                <?php } ?>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <th colspan="9" class="text small">Total: <?= count($row) ?> </th>
-                </tr>
-            </tfoot>
+                        // nilai
+                        // Operasi Switch-case membuat rentang nilai
+                        switch ($row['nilai']) {
+                            case $row['nilai'] >= 90 && $row['nilai'] <= 100:
+                               $grade = 'A';
+                               $ket = 'Sangat Baik';
+                                break;
+                            case $row['nilai'] >= 85 && $row['nilai'] <= 89.9:
+                                $grade = 'A-';
+                               $ket = 'Sangat Baik';
+                                break;
+                            case $row['nilai'] >= 80 && $row['nilai'] <= 84.9:
+                                $grade = 'B+';
+                               $ket = 'Baik';
+                                break;
+                            case $row['nilai'] >= 75 && $row['nilai'] <= 79.9:
+                                $grade = 'B';
+                               $ket = 'Baik';
+                                break;
+                            case $row['nilai'] >= 70 && $row['nilai'] <= 74.9:
+                                $grade = 'B-';
+                                $ket = 'Baik';
+                                break;
+                            case $row['nilai'] >= 65 && $row['nilai'] <= 69.9:
+                                $grade= 'C+';
+                               $ket = 'Cukup';
+                                break;
+                            case $row['nilai'] >= 60 && $row['nilai'] <= 64.9:
+                                $grade= 'C';
+                               $ket = 'Cukup';
+                                break;
+                            case $row['nilai'] >= 55 && $row['nilai'] <= 59.9:
+                                $grade = 'C-';
+                               $ket = 'Cukup';
+                                break;
+                            case $row['nilai'] >= 50 && $row['nilai'] <= 54.9:
+                                $grade = 'D';
+                                $ket = 'Kurang';
+                                break;
+                            case $row['nilai'] >= 0 && $row['nilai'] <= 49.9:
+                                $grade = 'E';
+                                $ket = 'Tidak Lulus';
+                                break;
+                            default:
+                                $nilai = 'NaN';
+                                $ket = 'Null';
+                                break;
+                        } ?>
 
-        </table>
 
-                
+                        <tr class="<?= $warna ?>">
+                            <td><?= $no++ ?></td>
+                            <td><?= $row['nama'] ?></td>
+                            <td><?= $row['tanggal_lahir'] ?></td>
+                            <td><?= $age->y ?> Tahun</td>
+                            <td><?= $row['alamat'] ?></td>
+                            <td><?= $row['kelas'] ?></td>
+                            <td class="text-center"><?= $row['nilai'] ?></td>
+                            <td class="text-center"><?= $grade ?></td>
+                            <td><?= $ket ?></td>
+                        </tr>
+
+                    <?php } ?>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th colspan="9" class="text small">Total: <?= count($row) ?> </th>
+                    </tr>
+                </tfoot>
+
+            </table>
+
+
 
         </div>
     </div>
